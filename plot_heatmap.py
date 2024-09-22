@@ -4,9 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def plot_heatmap(data):
-    features = ['CBD Distance', 'Bedroom', 'Bathroom', 'Car-Garage', 'Landsize', 'Building Area', 'Property Age', 'Suburb', 'RE Agency', 'Status']
-    correlation_matrix = data[features + ['Price']].corr()
-    plt.figure(figsize=(12, 10))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
-    plt.title('Correlation Heatmap')
+    plt.figure(figsize=(10, 8))
+    correlation_matrix = data.corr()
+    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+    plt.title("Feature Correlation Heatmap")
     plt.show()
